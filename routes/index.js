@@ -1,6 +1,6 @@
-const express = require('express')
+const express = require('express');
 const fileUpload = require('express-fileupload');
-const router = express.Router()
+const router = express.Router();
 
 const {SpiceService} = require('../services/spiceservice');
 const {uploadImage, detectFood} = require('../services/image_handle');
@@ -57,7 +57,7 @@ function ingredientize(recipes) {
 
 router.use(fileUpload());
 
-router.get('/', function(req, res){
+router.get('/', function(req, res) {
   res.json({ title: 'Cloudant Boiler Plate' });
 });
 

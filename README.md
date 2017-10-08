@@ -9,7 +9,7 @@ This application demonstrates how to use the Bluemix Cloudant NoSQL DB service. 
 1. [Install Node.js][]
 + cd into this project's root directory
 + Copy the value for the VCAP_SERVICES envirionment variable from the application running in Bluemix and paste it in a `vcap-local.json` file
-+ Create an `env` file with export statements for `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, and `AWS_REGION`
++ Create an `env` file with export statements for `AWS_S3_BUCKET`, `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, and `AWS_REGION`
 + Run `npm install` to install the app's dependencies
 + Run `./run.sh` to start the app for development and `npm start` for prod
 + Access the running app in a browser at <http://localhost:3000>

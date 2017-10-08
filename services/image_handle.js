@@ -37,7 +37,7 @@ function uploadImage(buffer, cb) {
   // const hashBuf = Buffer.from(buffer);
   const fileName = uuid();
   s3.upload({
-    Bucket: 'peoplepics',
+    Bucket: process.env.AWS_S3_BUCKET |'peoplepics',
     Key: fileName,
     Body: buffer,
     ACL: 'public-read'

@@ -8,6 +8,7 @@ if [ ! -f "$ENV_FILE" ]; then
 	echo "Here's a template to get you started: "
 	echo
   echo "#!/bin/sh"
+	echo "export AWS_S3_BUCKET='YOUR_S3_BUCKET_HERE'"
   echo "export AWS_ACCESS_KEY_ID='YOUR_KEY_ID_HERE'"
   echo "export AWS_SECRET_ACCESS_KEY='YOUR_ACCESS_KEY_HERE'"
   echo "export AWS_REGION='us-west-2'"
