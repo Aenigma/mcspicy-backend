@@ -15,6 +15,7 @@ AWS.config.update({
 
 const s3 = new AWS.S3({apiVersion: '2006-03-01'});
 const rekognition = new AWS.Rekognition({apiVersion: '2016-06-27'});
+const awsBucket = process.env.AWS_S3_BUCKET || 'peoplepics';
 
 //Add Image Name as Param
 function detectFood(photoname, cb){
@@ -22,7 +23,7 @@ function detectFood(photoname, cb){
     Image: {
       S3Object: {
         //Bucket: "arn:aws:s3:::peoplepics",
-        Bucket: "peoplepics",
+        Bucket: awsBucket,
         Name: photoname
       }
     }
@@ -37,7 +38,7 @@ function uploadImage(buffer, cb) {
   // const hashBuf = Buffer.from(buffer);
   const fileName = uuid();
   s3.upload({
-    Bucket: process.env.AWS_S3_BUCKET |'peoplepics',
+    Bucket: awsBucket,
     Key: fileName,
     Body: buffer,
     ACL: 'public-read'
