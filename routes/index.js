@@ -78,7 +78,7 @@ router.post('/imageSuggest', function(req, res) {
   }
 
   const image = req.files.image;
-  const buffer = image.data;
+  //const buffer = image.data;
 
   uploadImage(buffer, (err, data) => {
     if (err) {
