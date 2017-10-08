@@ -3,7 +3,7 @@
   "version": "0.0.2",
   "private": true,
   "scripts": {
-    "start": "bash ./run.sh"
+    "start": "node app.js"
   },
   "dependencies": {
     "aws-sdk": "^2.130.0",
