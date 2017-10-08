@@ -21,7 +21,7 @@
   },
   "repository": {},
   "engines": {
-    "node": "6.x"
+    "node": "8.x"
   },
   "devDependencies": {
     "node-fetch": "^1.7.3"
