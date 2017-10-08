@@ -6,11 +6,11 @@ const uuid = require('uuid/v4');
 // Load credentials and set region from JSON file
 const AWS = require('aws-sdk');
 
-// For dev purposes only
+// if environmental variables don't exist; this will fail
 AWS.config.update({
-  accessKeyId: 'AKIAIOSG7VTVBLDDSFVQ',
-  secretAccessKey: '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',
-  region:'us-west-2'
+  accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+  secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+  region: process.env.AWS_REGION || 'us-west-2'
 });
 
 const s3 = new AWS.S3({apiVersion: '2006-03-01'});

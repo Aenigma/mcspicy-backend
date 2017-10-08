@@ -3,7 +3,7 @@
 */
 
 const express = require('express');
-const    routes = require('./routes');
+const routes = require('./routes');
 const http = require('http');
 const path = require('path');
 const fs = require('fs');
