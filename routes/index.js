@@ -25,6 +25,10 @@ function sortByRecipes(a, b) {
   return 0;
 }
 
+function mapToArray(obj) {
+  return Object.keys(obj).map((key) => obj[key]).sort(sortByRecipes);
+}
+
 function ingredientize(recipes) {
   let map = {};
 
@@ -48,7 +52,7 @@ function ingredientize(recipes) {
     });
   });
 
-  return Object.values(map).sort(sortByRecipes);
+  return mapToArray(map);
 }
 
 router.use(fileUpload());
