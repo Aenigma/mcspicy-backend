@@ -3,12 +3,10 @@
 
 const fs = require('fs');
 
+const DB_NAME = 'recipes';
+
 var cloudant;
 var db;
-
-var dbCredentials = {
-  dbName: 'recipes'
-};
 
 function getDBCredentialsUrl(jsonData) {
   var vcapServices = JSON.parse(jsonData);
@@ -22,7 +20,10 @@ function getDBCredentialsUrl(jsonData) {
   }
 }
 
-function initDBConnection() {
+function initDBConnection(dbName) {
+  var dbCredentials = {
+    dbName: dbName
+  };
   //When running on Bluemix, this variable will be set to a json object
   //containing all the service credentials of all the bound services
   if (process.env.VCAP_SERVICES) {
@@ -42,16 +43,18 @@ function initDBConnection() {
   cloudant = require('cloudant')(dbCredentials.url);
 
   // check if DB exists if not create
+  /* just create the DB prior, jesus christ
   cloudant.db.create(dbCredentials.dbName, function(err, res) {
     if (err) {
       console.log('Could not create new db: ' + dbCredentials.dbName + ', it might already exist.');
     }
   });
+  */
 
   db = cloudant.use(dbCredentials.dbName);
 }
 
-initDBConnection();
+initDBConnection(DB_NAME);
 
 module.exports.cloudant = cloudant;
 module.exports.db = db;

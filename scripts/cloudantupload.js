@@ -6,7 +6,7 @@ const fs = require('fs');
 const fetch = require('node-fetch');
 const {promisify} = require('util');
 
-var cloudant = require('./cloudant');
+var cloudant = require('../services/cloudant');
 
 const apiHeaders = {
   "Content-Type": "application/json",
