@@ -6,17 +6,21 @@
     "start": "node app.js"
   },
   "dependencies": {
-    "express": "4.15.x",
-    "ejs": "2.5.x",
-    "cloudant": "1.7.x",
     "body-parser": "1.17.x",
-    "method-override": "2.3.x",
-    "morgan": "1.8.x",
+    "cloudant": "1.7.x",
+    "connect-multiparty": "2.0.x",
+    "cors": "^2.8.4",
+    "ejs": "2.5.x",
     "errorhandler": "1.5.x",
-    "connect-multiparty": "2.0.x"
+    "express": "4.15.x",
+    "method-override": "2.3.x",
+    "morgan": "1.8.x"
   },
   "repository": {},
   "engines": {
     "node": "6.x"
+  },
+  "devDependencies": {
+    "node-fetch": "^1.7.3"
   }
 }
