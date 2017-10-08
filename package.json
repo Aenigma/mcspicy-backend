@@ -1,5 +1,5 @@
 {
-  "name": "cloudant_boilerplate_nodejs",
+  "name": "mcspicy",
   "version": "0.0.2",
   "private": true,
   "scripts": {
@@ -13,6 +13,7 @@
     "ejs": "2.5.x",
     "errorhandler": "1.5.x",
     "express": "4.15.x",
+    "express-fileupload": "^0.3.0",
     "method-override": "2.3.x",
     "morgan": "1.8.x"
   },
