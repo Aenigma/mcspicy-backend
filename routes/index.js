@@ -7,6 +7,24 @@ const {uploadImage, detectFood} = require('../services/image_handle');
 
 const service = new SpiceService();
 
+function sortByRecipes(a, b) {
+  let res = b.recipes.length - a.recipes.length;
+
+  if (res !== 0) {
+    return res;
+  }
+
+  if (a < b) {
+    return -1;
+  }
+
+  if (a > b) {
+    return 1;
+  }
+
+  return 0;
+}
+
 function ingredientize(recipes) {
   let map = {};
 
@@ -30,7 +48,7 @@ function ingredientize(recipes) {
     });
   });
 
-  return Object.values(map);
+  return Object.values(map).sort(sortByRecipes);
 }
 
 router.use(fileUpload());
