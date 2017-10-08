@@ -6,6 +6,7 @@
     "start": "node app.js"
   },
   "dependencies": {
+    "aws-sdk": "^2.130.0",
     "body-parser": "1.17.x",
     "cloudant": "1.7.x",
     "connect-multiparty": "2.0.x",
@@ -15,7 +16,8 @@
     "express": "4.15.x",
     "express-fileupload": "^0.3.0",
     "method-override": "2.3.x",
-    "morgan": "1.8.x"
+    "morgan": "1.8.x",
+    "uuid": "^3.1.0"
   },
   "repository": {},
   "engines": {
